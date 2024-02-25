@@ -1,0 +1,21 @@
+.mat-drawer-content {
+  text-align: center;
+  height: calc(100vh - 65px);
+  padding: 0px 20px;
+}
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  // .right-toolbar {
+  // }
+  // .left-toolbar {
+  // }
+}
+
+.profile {
+  width: 150px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}

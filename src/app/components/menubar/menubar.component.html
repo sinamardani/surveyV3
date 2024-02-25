@@ -1,0 +1,78 @@
+<mat-toolbar style="height: 60px" color="primary" class="mat-elevation-z8">
+  <div class="right-toolbar">
+    <button (click)="drawer.toggle()" mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div class="left-toolbar">
+    <!-- <a href="#" mat-raised-button color="warn">خروج</a> -->
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Profile">
+      <i class="fa-solid fa-user fa-sm"></i>
+    </button>
+    <mat-menu #menu="matMenu">
+      <div style="text-align: center">
+        <h4>سینا مردانی</h4>
+        <h5>1273650271</h5>
+      </div>
+      <button mat-menu-item>
+        <div class="profile">
+          <div>
+            <i class="fa-solid fa-gear" style="color: #343239"></i>
+          </div>
+          <div>
+            <span style="font-family: 'VazirBoldFD'">تنظیمات</span>
+          </div>
+        </div>
+      </button>
+      <button mat-menu-item>
+        <div class="profile">
+          <div>
+            <i
+              class="fa-solid fa-arrow-right-from-bracket"
+              style="color: #343239"
+            ></i>
+          </div>
+          <div>
+            <span style="font-family: 'VazirBoldFD'">خروج</span>
+          </div>
+        </div>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="true" mode="side" position="start">
+    <mat-nav-list>
+      <mat-list-item>
+        <button routerLink="card" mat-button>
+          <mat-icon>dashboard</mat-icon> Dashboard
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="" mat-button><mat-icon>home</mat-icon> Home</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="slider" mat-button>
+          <mat-icon>explore</mat-icon> Slider
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="table" mat-button>
+          <mat-icon>table</mat-icon> Table
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button><mat-icon>settings</mat-icon> Settings</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button><mat-icon>help</mat-icon> Help</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button><mat-icon>analytics</mat-icon> analytics</button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="mat-drawer-content"></div>
+  </mat-drawer-content>
+</mat-drawer-container>
