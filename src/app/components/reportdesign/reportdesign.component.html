@@ -1,1 +1,61 @@
-<p>reportdesign works!</p>
+<fieldset class="title-of-page-container">
+  <label class="title-of-page-subject">طراحی گزارش</label>
+</fieldset>
+
+<form class="form" [formGroup]="forms" (ngSubmit)="OnFormSubmit()">
+  <div *ngFor="let item of forms.get('levelForms')['controls']; let i = index">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>مرحله {{ i + 1 }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content> </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>قبلی</button>
+        <button mat-button>بعدی</button>
+      </mat-card-actions>
+      <mat-card-footer
+        style="text-align: left; margin: 0 0 0 10px; padding: 0 0 10px 0"
+      >
+        <button
+          style="margin: 2.5px; background-color: rgb(32, 226, 90)"
+          mat-mini-fab
+          matTooltip="تعریف‌سوال"
+          matTooltipPosition="above"
+          (click)="AddItem()"
+        >
+          <i class="fa-solid fa-clipboard-question"></i>
+        </button>
+        <button
+          style="margin: 2.5px; background-color: rgb(240, 102, 118)"
+          mat-mini-fab
+          matTooltip="حذف‌سوال"
+          matTooltipPosition="above"
+          (click)="AddItem()"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        |
+        <button
+          style="margin: 2.5px"
+          mat-mini-fab
+          color="warn"
+          matTooltip="حذف مرحله"
+          matTooltipPosition="above"
+          (click)="RemoveLevel(i)"
+        >
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </mat-card-footer>
+    </mat-card>
+    <br />
+  </div>
+  <button
+    mat-mini-fab
+    class="add-level"
+    matTooltip="اضافه شدن مرحله"
+    matTooltipPosition="left"
+    (click)="AddLevel()"
+  >
+    <i style="padding: 5px" class="fa-solid fa-plus"></i>
+  </button>
+</form>

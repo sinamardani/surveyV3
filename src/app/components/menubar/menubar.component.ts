@@ -24,7 +24,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       ),
       state('close', style({ width: '55px' })),
       state('sideNavOpen', style({ 'margin-right': '200px' })),
-      state('sideNavClose', style({ 'margin-right': '0px' })),
+      state('sideNavClose', style({ 'margin-right': '55px' })),
       transition('open => close', [animate('.2s')]),
       transition('close => open', [animate('.2s')]),
       transition('sideNavOpen => sideNavClose', [animate('.2s')]),
