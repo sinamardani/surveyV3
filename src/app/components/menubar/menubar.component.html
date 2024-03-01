@@ -1,6 +1,8 @@
 <mat-toolbar style="height: 60px" color="primary" class="mat-elevation-z8">
   <div class="right-toolbar">
-    <button (click)="drawer.toggle()" mat-icon-button>
+    <!-- (click)="drawer.toggle()" -->
+    <!-- (click)="collapsed.set(!collapsed())" -->
+    <button mat-icon-button (click)="toggle()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
@@ -40,39 +42,28 @@
     </mat-menu>
   </div>
 </mat-toolbar>
-<mat-drawer-container autosize>
-  <mat-drawer #drawer opened="true" mode="side" position="start">
+<mat-drawer-container>
+  <!-- <mat-drawer #drawer opened="true" mode="side" position="start"> -->
+  <mat-drawer
+    [@openClose]="isOpen ? 'open' : 'close'"
+    opened
+    mode="side"
+    position="start"
+  >
     <mat-nav-list>
-      <mat-list-item>
-        <button routerLink="card" mat-button>
-          <mat-icon>dashboard</mat-icon> Dashboard
-        </button>
-      </mat-list-item>
-      <mat-list-item>
-        <button routerLink="" mat-button><mat-icon>home</mat-icon> Home</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button routerLink="slider" mat-button>
-          <mat-icon>explore</mat-icon> Slider
-        </button>
-      </mat-list-item>
-      <mat-list-item>
-        <button routerLink="table" mat-button>
-          <mat-icon>table</mat-icon> Table
-        </button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-button><mat-icon>settings</mat-icon> Settings</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-button><mat-icon>help</mat-icon> Help</button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-button><mat-icon>analytics</mat-icon> analytics</button>
-      </mat-list-item>
+      <!-- <a routerLink="card" class="user-select-none" mat-list-item>
+        <mat-icon matListItemIcon>dashboard</mat-icon>
+        <span matListItemTitle>صفحه‌اصلی</span>
+      </a> -->
+      <a routerLink="/ReportDesign" class="user-select-none" mat-list-item>
+        <mat-icon matListItemIcon> list_alt</mat-icon>
+        <span matListItemTitle>طراحی‌گزارش</span>
+      </a>
     </mat-nav-list>
   </mat-drawer>
-  <mat-drawer-content>
-    <div class="mat-drawer-content"></div>
+  <mat-drawer-content [@openClose]="isOpen ? 'sideNavOpen' : 'sideNavClose'">
+    <div class="mat-drawer-content">
+      <router-outlet></router-outlet>
+    </div>
   </mat-drawer-content>
 </mat-drawer-container>

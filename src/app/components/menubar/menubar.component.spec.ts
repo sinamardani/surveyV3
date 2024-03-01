@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+  import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MenubarComponent } from './menubar.component';
 
@@ -11,7 +11,7 @@ describe('MenubarComponent', () => {
       imports: [MenubarComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(MenubarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
