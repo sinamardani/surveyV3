@@ -37,7 +37,7 @@ export class ReportdesignComponent implements OnInit {
     levels.removeAt(index);
   }
 
-  AddItem() {}
+  AddQuestion() {}
 
-  RemoveItem() {}
+  RemoveQuestion() {}
 }
